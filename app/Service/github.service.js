@@ -1,4 +1,4 @@
-System.register(['angular2/core'], function(exports_1, context_1) {
+System.register(["angular2/core"], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -11,27 +11,34 @@ System.register(['angular2/core'], function(exports_1, context_1) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
     var core_1;
-    var AppComponent;
+    var GithubService;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
             }],
         execute: function() {
-            AppComponent = (function () {
-                function AppComponent() {
+            GithubService = (function () {
+                function GithubService(http) {
                 }
-                AppComponent = __decorate([
-                    core_1.Component({
-                        selector: 'my-app',
-                        templateUrl: 'app/details.component.html'
-                    }), 
-                    __metadata('design:paramtypes', [])
-                ], AppComponent);
-                return AppComponent;
+                GithubService.prototype.GetAllProfiles = function (names) {
+                };
+                GithubService.prototype.getProfile = function (id) {
+                };
+                GithubService.prototype.getRepositories = function (username) {
+                };
+                GithubService.prototype.getFollowers = function (username) {
+                };
+                GithubService.prototype.getFollowings = function (username) {
+                };
+                GithubService = __decorate([
+                    core_1.Injectable(), 
+                    __metadata('design:paramtypes', [Object])
+                ], GithubService);
+                return GithubService;
             }());
-            exports_1("AppComponent", AppComponent);
+            exports_1("GithubService", GithubService);
         }
     }
 });
-//# sourceMappingURL=app.component.js.map
+//# sourceMappingURL=github.service.js.map
