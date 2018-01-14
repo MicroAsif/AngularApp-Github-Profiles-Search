@@ -1,5 +1,5 @@
+import { NavbarComponent } from './Component/navbar.component';
 import { GithubService } from './Service/github.service';
-import { NavbarComponent } from './navbar.component';
 
 import {Component} from 'angular2/core';
 import { TestCompoent } from './test.component';
@@ -15,7 +15,7 @@ import { TestCompoent } from './test.component';
 export class AppComponent {
 
         constructor(githubService : GithubService){
-                githubService.getProfile("microasif").subscribe(d => console.log(d));
+                githubService.GetAllProfiles("mic").subscribe(d => console.log(d));
         }
 
  }

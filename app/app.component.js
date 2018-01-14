@@ -1,4 +1,4 @@
-System.register(['./Service/github.service', './navbar.component', 'angular2/core', './test.component'], function(exports_1, context_1) {
+System.register(['./Component/navbar.component', './Service/github.service', 'angular2/core', './test.component'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,15 +10,15 @@ System.register(['./Service/github.service', './navbar.component', 'angular2/cor
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var github_service_1, navbar_component_1, core_1, test_component_1;
+    var navbar_component_1, github_service_1, core_1, test_component_1;
     var AppComponent;
     return {
         setters:[
-            function (github_service_1_1) {
-                github_service_1 = github_service_1_1;
-            },
             function (navbar_component_1_1) {
                 navbar_component_1 = navbar_component_1_1;
+            },
+            function (github_service_1_1) {
+                github_service_1 = github_service_1_1;
             },
             function (core_1_1) {
                 core_1 = core_1_1;
@@ -29,7 +29,7 @@ System.register(['./Service/github.service', './navbar.component', 'angular2/cor
         execute: function() {
             AppComponent = (function () {
                 function AppComponent(githubService) {
-                    githubService.getProfile("microasif").subscribe(function (d) { return console.log(d); });
+                    githubService.GetAllProfiles("mic").subscribe(function (d) { return console.log(d); });
                 }
                 AppComponent = __decorate([
                     core_1.Component({

@@ -24,7 +24,7 @@ System.register(["angular2/core"], function(exports_1, context_1) {
                 NavbarComponent = __decorate([
                     core_1.Component({
                         selector: 'nav-bar',
-                        templateUrl: 'app/navbar.component.html'
+                        templateUrl: 'app/Component/navbar.component.html'
                     }), 
                     __metadata('design:paramtypes', [])
                 ], NavbarComponent);
