@@ -1,4 +1,4 @@
-System.register(["angular2/core", "angular2/http"], function(exports_1, context_1) {
+System.register(["angular2/core", "angular2/http", "rxjs/add/operator/map"], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -19,7 +19,8 @@ System.register(["angular2/core", "angular2/http"], function(exports_1, context_
             },
             function (http_1_1) {
                 http_1 = http_1_1;
-            }],
+            },
+            function (_1) {}],
         execute: function() {
             GithubService = (function () {
                 function GithubService(http) {
@@ -32,7 +33,7 @@ System.register(["angular2/core", "angular2/http"], function(exports_1, context_
                     this._followings = "/following";
                 }
                 GithubService.prototype.GetAllProfiles = function (names) {
-                    return this.http.get(this._baseUrl + this._search + name).map(function (x) { return x.json(); });
+                    return this.http.get(this._baseUrl + this._search + names).map(function (x) { return x.json(); });
                 };
                 GithubService.prototype.getProfile = function (username) {
                     return this.http.get(this._baseUrl + this._user + username).map(function (x) { return x.json(); });

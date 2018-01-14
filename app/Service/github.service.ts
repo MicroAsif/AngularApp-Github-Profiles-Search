@@ -1,5 +1,6 @@
 import { Injectable } from "angular2/core";
 import { Http } from "angular2/http";
+import "rxjs/add/operator/map";
 
 @Injectable()
 export class GithubService { 
@@ -15,7 +16,7 @@ export class GithubService {
     }
 
     GetAllProfiles(names){ 
-        return this.http.get(this._baseUrl + this._search + name).map(x=> x.json());
+        return this.http.get(this._baseUrl + this._search + names).map(x=> x.json());
     }
 
     getProfile(username){ 
