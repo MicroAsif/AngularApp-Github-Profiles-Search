@@ -30,8 +30,9 @@ System.register(['./../Service/github.service', "angular2/core"], function(expor
                 ProfileComponent = __decorate([
                     core_1.Component({
                         selector: 'profiles',
-                        template: "<br/> \n                    <div class=\"container\" *ngIf=\"users\">\n                        <div class=\"row\">\n                            <div class=\"col-2\" *ngFor=\"#u of users\">\n                                <img class=\"mr-3 rounded-circle\" [src]=\"u.avatar_url\"  alt=\"Generic placeholder image\">\n                                <h5 class=\"mt-0\">{{u.login}}</h5>\n                            </div>\n                            \n                        </div>  \n                    </div>\n                ",
-                        styles: ["\n            img { \n                width : 90px;\n            }\n        "]
+                        template: "\n                    Profile Component\n                ",
+                        styles: ["\n            img { \n                width : 90px;\n            }\n        "],
+                        providers: [github_service_1.GithubService]
                     }), 
                     __metadata('design:paramtypes', [github_service_1.GithubService])
                 ], ProfileComponent);

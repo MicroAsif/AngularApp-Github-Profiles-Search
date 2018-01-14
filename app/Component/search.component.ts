@@ -1,6 +1,7 @@
 import { ProfileComponent } from './profile.component';
 import { GithubService } from './../Service/github.service';
 import { Component } from "angular2/core";
+import { ROUTER_DIRECTIVES } from 'angular2/router';
 
 @Component({
     selector : 'search-bar', 
@@ -11,7 +12,7 @@ import { Component } from "angular2/core";
             }
         `], 
     providers : [GithubService], 
-    directives : [ProfileComponent]
+    directives : [ProfileComponent, ROUTER_DIRECTIVES]
 })
 
 export class SearchComponent{ 

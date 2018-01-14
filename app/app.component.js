@@ -1,4 +1,4 @@
-System.register(['./Component/search.component', 'angular2/core'], function(exports_1, context_1) {
+System.register(['./Component/search.component', 'angular2/core', 'angular2/router', './Component/profile.component'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(['./Component/search.component', 'angular2/core'], function(expo
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var search_component_1, core_1;
+    var search_component_1, core_1, router_1, profile_component_1;
     var AppComponent;
     return {
         setters:[
@@ -19,16 +19,27 @@ System.register(['./Component/search.component', 'angular2/core'], function(expo
             },
             function (core_1_1) {
                 core_1 = core_1_1;
+            },
+            function (router_1_1) {
+                router_1 = router_1_1;
+            },
+            function (profile_component_1_1) {
+                profile_component_1 = profile_component_1_1;
             }],
         execute: function() {
             AppComponent = (function () {
                 function AppComponent() {
                 }
                 AppComponent = __decorate([
+                    router_1.RouteConfig([
+                        { path: '/', name: 'Search', component: search_component_1.SearchComponent, useAsDefault: true },
+                        { path: '/profile', name: 'Profile', component: profile_component_1.ProfileComponent },
+                        { path: '/*other', name: 'Other', redirectTo: ['Search'] },
+                    ]),
                     core_1.Component({
                         selector: 'my-app',
-                        template: "\n                <search-bar></search-bar>\n            ",
-                        directives: [search_component_1.SearchComponent]
+                        template: "\n                \n                \n                <router-outlet></router-outlet>\n                 \n            ",
+                        directives: [search_component_1.SearchComponent, profile_component_1.ProfileComponent, router_1.ROUTER_DIRECTIVES]
                     }), 
                     __metadata('design:paramtypes', [])
                 ], AppComponent);
