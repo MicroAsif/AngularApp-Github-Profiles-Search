@@ -16,7 +16,7 @@ export class GithubService {
     }
 
     GetAllProfiles(names){ 
-        return this.http.get(this._baseUrl + this._search + names).map(x=> x.json());
+        return this.http.get(this._baseUrl + this._search + names).map(x=> x.json().items);
     }
 
     getProfile(username){ 

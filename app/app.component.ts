@@ -1,21 +1,17 @@
-import { NavbarComponent } from './Component/navbar.component';
-import { GithubService } from './Service/github.service';
+import { SearchComponent } from './Component/search.component';
 
 import {Component} from 'angular2/core';
-import { TestCompoent } from './test.component';
 
 @Component({
     selector: 'my-app',
     template : `
-                <nav-bar></nav-bar>
+                <search-bar></search-bar>
             `, 
-    directives : [TestCompoent, NavbarComponent], 
-    providers : [GithubService]
+    directives : [SearchComponent]
 })
 export class AppComponent {
-
-        constructor(githubService : GithubService){
-                githubService.GetAllProfiles("mic").subscribe(d => console.log(d));
+        constructor(){
+               
         }
 
  }

@@ -33,7 +33,7 @@ System.register(["angular2/core", "angular2/http", "rxjs/add/operator/map"], fun
                     this._followings = "/following";
                 }
                 GithubService.prototype.GetAllProfiles = function (names) {
-                    return this.http.get(this._baseUrl + this._search + names).map(function (x) { return x.json(); });
+                    return this.http.get(this._baseUrl + this._search + names).map(function (x) { return x.json().items; });
                 };
                 GithubService.prototype.getProfile = function (username) {
                     return this.http.get(this._baseUrl + this._user + username).map(function (x) { return x.json(); });

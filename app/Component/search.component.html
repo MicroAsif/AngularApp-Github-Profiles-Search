@@ -1,0 +1,38 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <a class="navbar-brand offset-md-1" href="#">
+            <i class="fa fa-github" aria-hidden="true"></i>
+            <strong>Github</strong> <small>Profile Search</small> </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarColor01">
+           
+          <input class="form-control mr-sm-4" type="text" placeholder="Search Github User" #username (keyup)="onSubmit(username.value)" />
+          <button class="btn btn-secondary my-2 my-sm-0" type="submit" (click)="onSubmit(username.value)" >Search</button>
+          <ul class="navbar-nav offset-md-6 offset-md-1">
+    
+                <li class="nav-item">
+                    <a class="nav-link" target="_blank" href="https://github.com/MicroAsif/NgApp-Github-Profile-Search"><i class="fa fa-github" aria-hidden="true"></i></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" target="_blank" href="https://github.com/MicroAsif/NgApp-Github-Profile-Search"><i class="fa fa-star" aria-hidden="true"></i></a>
+                </li>
+                <li class="nav-item">
+                  <a type="button" target="_blank" href="https://github.com/MicroAsif/NgApp-Github-Profile-Search" class="btn btn-success">Download</a>
+                </li>
+          </ul>
+         
+        </div>
+      </nav>
+      <br/>
+      <div class="container" *ngIf="users">
+            <div class="row">
+                
+                <div class="col-2" *ngFor="#u of users">
+                    <img class="mr-3 rounded-circle" [src]="u.avatar_url"  alt="Generic placeholder image">
+                    <h5 class="mt-0">{{u.login}}</h5>
+                    <br/>
+                </div>
+            </div>  
+        </div>
