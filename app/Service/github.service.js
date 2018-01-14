@@ -1,4 +1,4 @@
-System.register(["angular2/core"], function(exports_1, context_1) {
+System.register(["angular2/core", "angular2/http"], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,30 +10,45 @@ System.register(["angular2/core"], function(exports_1, context_1) {
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1;
+    var core_1, http_1;
     var GithubService;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
+            },
+            function (http_1_1) {
+                http_1 = http_1_1;
             }],
         execute: function() {
             GithubService = (function () {
                 function GithubService(http) {
+                    this.http = http;
+                    this._baseUrl = "https://api.github.com";
+                    this._search = "/search/users?q=";
+                    this._user = "/users/";
+                    this._followers = "/followers";
+                    this._repos = "/repos";
+                    this._followings = "/following";
                 }
                 GithubService.prototype.GetAllProfiles = function (names) {
+                    return this.http.get(this._baseUrl + this._search + name).map(function (x) { return x.json(); });
                 };
-                GithubService.prototype.getProfile = function (id) {
+                GithubService.prototype.getProfile = function (username) {
+                    return this.http.get(this._baseUrl + this._user + username).map(function (x) { return x.json(); });
                 };
                 GithubService.prototype.getRepositories = function (username) {
+                    return this.http.get(this._baseUrl + this._user + username + this._repos).map(function (x) { return x.json(); });
                 };
                 GithubService.prototype.getFollowers = function (username) {
+                    return this.http.get(this._baseUrl + this._user + username + this._followers).map(function (x) { return x.json(); });
                 };
                 GithubService.prototype.getFollowings = function (username) {
+                    return this.http.get(this._baseUrl + this._user + username + this._followings).map(function (x) { return x.json(); });
                 };
                 GithubService = __decorate([
                     core_1.Injectable(), 
-                    __metadata('design:paramtypes', [Object])
+                    __metadata('design:paramtypes', [http_1.Http])
                 ], GithubService);
                 return GithubService;
             }());
