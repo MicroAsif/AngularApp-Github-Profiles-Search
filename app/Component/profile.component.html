@@ -2,16 +2,16 @@
         <div class="row">
         <div class="col-sm-6 col-md-4 col-lg-3 mt-4">
                 <div class="card card-inverse card-info">
-                    <img class="card-img-top" src="http://success-at-work.com/wp-content/uploads/2015/04/free-stock-photos.gif">
+                    <img class="card-img-top" [src]="user.avatar_url">
                     <div class="card-block">
-                        <h4 class="card-title">Asif Rahman <span style="color:#99999b">@Microasif</span></h4>
+                        <h4 class="card-title"> {{user.name}} <span style="color:#99999b">@{{user.login}}</span></h4>
                         <div class="card-text">
-                            Asif Rahman is a full stack web developer living in Bangladesh.
+                            {{user.bio}}
                         </div>
                     </div>
                     <div class="card-footer">
-                        <label><span class="fa fa-envelope-o" aria-hidden="true"></span> asif0531@live.com</label>
-                        <label><span class="fa fa-map-marker" aria-hidden="true"></span> Dhaka, Bangladesh</label>
+                        <label><span class="fa fa-envelope-o" aria-hidden="true"></span> {{user.blog}}</label>
+                        <label><span class="fa fa-map-marker" aria-hidden="true"></span> {{user.location}}</label>
                     </div>
                    
                 </div>
@@ -20,282 +20,41 @@
                     <br/>
                     <h5>Follwers</h5><hr>
                     <div class="row">
-                        <div class="img">
-                            <img class=" rounded-circle" src="https://avatars1.githubusercontent.com/u/4785749?v=4" alt="Generic placeholder image">
+                        <div class="img" *ngFor="#f of followers">
+                            <img class=" rounded-circle" [src]="f.avatar_url" alt="Generic placeholder image">
                             <div class="media-body">
-                                <p class="mt-0">John Smith</p>
+                                <p class="mt-0">{{f.login}}</p>
                             </div>
-                        </div>
-                        <div class="img">
-                            <img class="mr-3 rounded-circle" src="https://avatars1.githubusercontent.com/u/4785749?v=4" alt="Generic placeholder image">
-                            <div class="media-body">
-                                <p class="mt-0">John Smith</p>
-                            </div>
-                        </div>
-                        <div class="img">
-                                <img class="mr-3 rounded-circle" src="https://avatars1.githubusercontent.com/u/4785749?v=4" alt="Generic placeholder image">
-                                <div class="media-body">
-                                    <p class="mt-0">John Smith</p>
-                                </div>
-                        </div>
-                        <div class="img">
-                                <img class="mr-3 rounded-circle" src="https://avatars1.githubusercontent.com/u/4785749?v=4" alt="Generic placeholder image">
-                                <div class="media-body">
-                                    <p class="mt-0">John Smith</p>
-                                </div>
-                        </div>
-                        <div class="img">
-                                <img class=" rounded-circle" src="https://avatars1.githubusercontent.com/u/4785749?v=4" alt="Generic placeholder image">
-                                <div class="media-body">
-                                    <p class="mt-0">John Smith</p>
-                                </div>
-                            </div>
-                            <div class="img">
-                                <img class="mr-3 rounded-circle" src="https://avatars1.githubusercontent.com/u/4785749?v=4" alt="Generic placeholder image">
-                                <div class="media-body">
-                                    <p class="mt-0">John Smith</p>
-                                </div>
-                            </div>
-                            <div class="img">
-                                    <img class="mr-3 rounded-circle" src="https://avatars1.githubusercontent.com/u/4785749?v=4" alt="Generic placeholder image">
-                                    <div class="media-body">
-                                        <p class="mt-0">John Smith</p>
-                                    </div>
-                            </div>
-                            <div class="img">
-                                    <img class="mr-3 rounded-circle" src="https://avatars1.githubusercontent.com/u/4785749?v=4" alt="Generic placeholder image">
-                                    <div class="media-body">
-                                        <p class="mt-0">John Smith</p>
-                                    </div>
-                            </div>
-                            <div class="img">
-                                    <img class=" rounded-circle" src="https://avatars1.githubusercontent.com/u/4785749?v=4" alt="Generic placeholder image">
-                                    <div class="media-body">
-                                        <p class="mt-0">John Smith</p>
-                                    </div>
-                                </div>
-                                <div class="img">
-                                    <img class="mr-3 rounded-circle" src="https://avatars1.githubusercontent.com/u/4785749?v=4" alt="Generic placeholder image">
-                                    <div class="media-body">
-                                        <p class="mt-0">John Smith</p>
-                                    </div>
-                                </div>
-                                <div class="img">
-                                        <img class="mr-3 rounded-circle" src="https://avatars1.githubusercontent.com/u/4785749?v=4" alt="Generic placeholder image">
-                                        <div class="media-body">
-                                            <p class="mt-0">John Smith</p>
-                                        </div>
-                                </div>
-                                <div class="img">
-                                        <img class="mr-3 rounded-circle" src="https://avatars1.githubusercontent.com/u/4785749?v=4" alt="Generic placeholder image">
-                                        <div class="media-body">
-                                            <p class="mt-0">John Smith</p>
-                                        </div>
-                                </div>
-                        
+                        </div> 
                     </div><br>
                     <h5>Followings</h5><hr>
                     <div class="row">
-                            <div class="img">
-                                    <img class=" rounded-circle" src="https://avatars1.githubusercontent.com/u/4785749?v=4" alt="Generic placeholder image">
-                                    <div class="media-body">
-                                        <p class="mt-0">John Smith</p>
-                                    </div>
-                                </div>
-                                <div class="img">
-                                    <img class="mr-3 rounded-circle" src="https://avatars1.githubusercontent.com/u/4785749?v=4" alt="Generic placeholder image">
-                                    <div class="media-body">
-                                        <p class="mt-0">John Smith</p>
-                                    </div>
-                                </div>
-                                <div class="img">
-                                        <img class="mr-3 rounded-circle" src="https://avatars1.githubusercontent.com/u/4785749?v=4" alt="Generic placeholder image">
-                                        <div class="media-body">
-                                            <p class="mt-0">John Smith</p>
-                                        </div>
-                                </div>
-                                <div class="img">
-                                        <img class="mr-3 rounded-circle" src="https://avatars1.githubusercontent.com/u/4785749?v=4" alt="Generic placeholder image">
-                                        <div class="media-body">
-                                            <p class="mt-0">John Smith</p>
-                                        </div>
-                                </div>
-                    </div>
-                        <br/>
+                        <div class="img" *ngFor="#f of followings">
+                            <img class=" rounded-circle" [src]="f.avatar_url" alt="Generic placeholder image">
+                            <div class="media-body">
+                            <p class="mt-0">{{f.login}}</p>
+                            </div>
+                        </div> 
+                                
+                    </div> <br/>
+
                    <div class="row"> 
-                       <h5>Repository: </h5>
-          
-            <div class="tab-content" id="nav-tabContent">
-                <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
-                    <br>    
+                   <div class="col-md-12">
+                        <h5>Repositories </h5><hr>  
+                    </div>
                     <div class="row">
-                        <div class="col-6">
+                        <div class="col-6" *ngFor="#r of repos">
                             <div class="card border-dark mb-3" style="max-width: 22rem;">
                                 <div class="card-body text-dark">
-                                    <h5 class="card-title">Repsitory Name</h5>
-                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                    <a href="#"><i class="fa fa-circle" aria-hidden="true"> Java</i></a>
-                                    <a href="#"><i class="fa fa-star" aria-hidden="true"> 32</i></a>
+                                    <h5 class="card-title">{{r.name}}</h5>
+                                    <p class="card-text">{{r.description}}</p>
+                                    <a href="#"><i class="fa fa-circle" aria-hidden="true"> </i> {{ r.language}} </a>
+                                    <a href="#"><i class="fa fa-star" aria-hidden="true"> </i> {{ r.stargazers_count}} </a>
                                 </div>
                             </div>         
                         </div>
-                        <div class="col-6">
-                                <div class="card border-dark mb-3" style="max-width: 22rem;">
-                                    <div class="card-body text-dark">
-                                        <h5 class="card-title">Repsitory Name</h5>
-                                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                        <a href="#"><i class="fa fa-circle" aria-hidden="true"> PHP</i></a>
-                                        <a href="#"><i class="fa fa-star" aria-hidden="true"> 42</i></a>
-                                    </div>
-                                </div>         
-                            </div>
-                            <div class="col-6">
-                                    <div class="card border-dark mb-3" style="max-width: 22rem;">
-                                        <div class="card-body text-dark">
-                                            <h5 class="card-title">Repsitory Name</h5>
-                                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                            <a href="#"><i class="fa fa-circle" aria-hidden="true"> PHP</i></a>
-                                            <a href="#"><i class="fa fa-star" aria-hidden="true"> 42</i></a>
-                                        </div>
-                                    </div>         
-                                </div>
-                                <div class="col-6">
-                                        <div class="card border-dark mb-3" style="max-width: 22rem;">
-                                            <div class="card-body text-dark">
-                                                <h5 class="card-title">Repsitory Name</h5>
-                                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                                <a href="#"><i class="fa fa-circle" aria-hidden="true"> PHP</i></a>
-                                                <a href="#"><i class="fa fa-star" aria-hidden="true"> 42</i></a>
-                                            </div>
-                                        </div>         
-                                    </div>
-                        </div>                    
+                    </div>                    
                 </div>
             </div>
-           
-            </div>
         </div>
-
-
-        <style type="text/css">
-            html {
-    font-family: Lato, 'Helvetica Neue', Arial, Helvetica, sans-serif;
-    font-size: 14px;
-}
-
-img { 
-    width: 80px;
-    margin: 3px;
-}
-
-h5 {
-    font-size: 1.28571429em;
-    font-weight: 700;
-    line-height: 1.2857em;
-    margin: 0;
-}
-
-.card {
-    font-size: 1em;
-    overflow: hidden;
-    padding: 0;
-    border: none;
-    border-radius: .28571429rem;
-    box-shadow: 0 1px 3px 0 #d4d4d5, 0 0 0 1px #d4d4d5;
-}
-
-.card-block {
-    font-size: 1em;
-    position: relative;
-    margin: 0;
-    padding: 1em;
-    border: none;
-    border-top: 1px solid rgba(34, 36, 38, .1);
-    box-shadow: none;
-}
-
-.card-img-top {
-    display: block;
-    width: 100%;
-    height: auto;
-}
-
-.card-title {
-    font-size: 1.28571429em;
-    font-weight: 700;
-    line-height: 1.2857em;
-}
-
-.card-text {
-    clear: both;
-    margin-top: .5em;
-    color: rgba(0, 0, 0, .68);
-}
-
-.card-footer {
-    font-size: 1em;
-    position: static;
-    top: 0;
-    left: 0;
-    max-width: 100%;
-    padding: .75em 1em;
-    color: rgba(0, 0, 0, 0.4);
-    border-top: 1px solid rgba(0, 0, 0, .05) !important;
-    background: #fff;
-}
-
-.card-inverse .btn {
-    border: 1px solid rgba(0, 0, 0, .05);
-}
-
-.profile {
-    position: absolute;
-    top: -12px;
-    display: inline-block;
-    overflow: hidden;
-    box-sizing: border-box;
-    width: 25px;
-    height: 25px;
-    margin: 0;
-    border: 1px solid #fff;
-    border-radius: 50%;
-}
-
-.profile-avatar {
-    display: block;
-    width: 100%;
-    height: auto;
-    border-radius: 50%;
-}
-
-.profile-inline {
-    position: relative;
-    top: 0;
-    display: inline-block;
-}
-
-.profile-inline ~ .card-title {
-    display: inline-block;
-    margin-left: 4px;
-    vertical-align: top;
-}
-
-.text-bold {
-    font-weight: 700;
-}
-
-.meta {
-    font-size: 1em;
-    color: rgba(0, 0, 0, .4);
-}
-
-.meta a {
-    text-decoration: none;
-    color: rgba(0, 0, 0, .4);
-}
-
-.meta a:hover {
-    color: rgba(0, 0, 0, .87);
-}
-        
-        </style>
+</div>

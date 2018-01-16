@@ -23,14 +23,26 @@ System.register(['./../Service/github.service', "angular2/core"], function(expor
         execute: function() {
             ProfileComponent = (function () {
                 function ProfileComponent(githubService) {
-                    //this.githubService.getAsffollowers().subscribe(data => console.log(data));
+                    var _this = this;
                     this.githubService = githubService;
-                    this.users = [];
+                    this.user = {};
+                    this.followers = [];
+                    this.followings = [];
+                    this.repos = [];
+                    //this.githubService.getProfile("Microasif").subscribe(d => console.log(d));
+                    this.githubService.getProfile("Microasif").subscribe(function (d) { return _this.user = d; });
+                    this.githubService.getFollowers("Microasif").subscribe(function (d) { return _this.followers = d; });
+                    this.githubService.getFollowings("Microasif").subscribe(function (d) { return _this.followings = d; });
+                    this.githubService.getRepositories("Microasif").subscribe(function (d) { return _this.repos = d; });
                 }
+                ProfileComponent.prototype.ngOnInit = function () {
+                    //this.loadUser();
+                };
                 ProfileComponent = __decorate([
                     core_1.Component({
                         selector: 'profiles',
                         templateUrl: 'app/component/profile.component.html',
+                        styleUrls: ['app/component/profile.component.css'],
                         providers: [github_service_1.GithubService]
                     }), 
                     __metadata('design:paramtypes', [github_service_1.GithubService])

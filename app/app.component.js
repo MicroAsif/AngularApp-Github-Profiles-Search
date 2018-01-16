@@ -37,7 +37,7 @@ System.register(['./Component/search.component', 'angular2/core', 'angular2/rout
                     ]),
                     core_1.Component({
                         selector: 'my-app',
-                        templateUrl: "app/Component/profile.component.html",
+                        template: " <profiles> </profiles>",
                         //         <router-outlet></router-outlet>
                         //     `, 
                         directives: [search_component_1.SearchComponent, profile_component_1.ProfileComponent, router_1.ROUTER_DIRECTIVES]

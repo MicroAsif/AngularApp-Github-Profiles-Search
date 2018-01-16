@@ -11,7 +11,7 @@ import { ProfileComponent } from './Component/profile.component';
 
 @Component({
     selector: 'my-app',
-    templateUrl : `app/Component/profile.component.html`, 
+    template : ` <profiles> </profiles>`, 
                 
         //         <router-outlet></router-outlet>
                  
