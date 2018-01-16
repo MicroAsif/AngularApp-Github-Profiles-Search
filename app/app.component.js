@@ -34,11 +34,12 @@ System.register(['./Component/search.component', 'angular2/core', 'angular2/rout
                     router_1.RouteConfig([
                         { path: '/', name: 'Search', component: search_component_1.SearchComponent, useAsDefault: true },
                         { path: '/profile', name: 'Profile', component: profile_component_1.ProfileComponent },
-                        { path: '/*other', name: 'Other', redirectTo: ['Search'] },
                     ]),
                     core_1.Component({
                         selector: 'my-app',
-                        template: "\n                \n                \n                <router-outlet></router-outlet>\n                 \n            ",
+                        templateUrl: "app/Component/profile.component.html",
+                        //         <router-outlet></router-outlet>
+                        //     `, 
                         directives: [search_component_1.SearchComponent, profile_component_1.ProfileComponent, router_1.ROUTER_DIRECTIVES]
                     }), 
                     __metadata('design:paramtypes', [])

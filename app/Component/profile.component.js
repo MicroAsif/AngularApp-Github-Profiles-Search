@@ -30,8 +30,7 @@ System.register(['./../Service/github.service', "angular2/core"], function(expor
                 ProfileComponent = __decorate([
                     core_1.Component({
                         selector: 'profiles',
-                        template: "\n                    Profile Component\n                ",
-                        styles: ["\n            img { \n                width : 90px;\n            }\n        "],
+                        templateUrl: 'app/component/profile.component.html',
                         providers: [github_service_1.GithubService]
                     }), 
                     __metadata('design:paramtypes', [github_service_1.GithubService])

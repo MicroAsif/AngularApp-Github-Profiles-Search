@@ -3,14 +3,7 @@ import { Component, Input } from "angular2/core";
 
 @Component({ 
     selector : 'profiles', 
-        template : `
-                    Profile Component
-                `, 
-        styles : [`
-            img { 
-                width : 90px;
-            }
-        `], 
+        templateUrl : 'app/component/profile.component.html',
         providers : [GithubService]
 
 })
