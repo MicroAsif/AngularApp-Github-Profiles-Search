@@ -47,8 +47,8 @@
                             <div class="card border-dark mb-3" style="max-width: 22rem;">
                                 <div class="card-body text-dark">
                                     <h5 class="card-title">{{r.name}}</h5>
-                                    <p class="card-text">{{r.description}}</p>
-                                    <a href="#"><i class="fa fa-circle" aria-hidden="true"> </i> {{ r.language}} </a>
+                                    <p class="card-text">{{r.description | summary }} </p>
+                                    <a href="#"><i class="fa fa-circle" aria-hidden="true"> </i> {{ r.language}} </a> &nbsp;&nbsp;
                                     <a href="#"><i class="fa fa-star" aria-hidden="true"> </i> {{ r.stargazers_count}} </a>
                                 </div>
                             </div>         

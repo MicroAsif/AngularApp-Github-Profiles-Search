@@ -1,4 +1,4 @@
-System.register(['./../Service/github.service', "angular2/core"], function(exports_1, context_1) {
+System.register(['./../CustomerPipes/summary.pipes', './../Service/github.service', "angular2/core"], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,10 +10,13 @@ System.register(['./../Service/github.service', "angular2/core"], function(expor
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var github_service_1, core_1;
+    var summary_pipes_1, github_service_1, core_1;
     var ProfileComponent;
     return {
         setters:[
+            function (summary_pipes_1_1) {
+                summary_pipes_1 = summary_pipes_1_1;
+            },
             function (github_service_1_1) {
                 github_service_1 = github_service_1_1;
             },
@@ -43,7 +46,8 @@ System.register(['./../Service/github.service', "angular2/core"], function(expor
                         selector: 'profiles',
                         templateUrl: 'app/component/profile.component.html',
                         styleUrls: ['app/component/profile.component.css'],
-                        providers: [github_service_1.GithubService]
+                        providers: [github_service_1.GithubService],
+                        pipes: [summary_pipes_1.SummaryPipes]
                     }), 
                     __metadata('design:paramtypes', [github_service_1.GithubService])
                 ], ProfileComponent);

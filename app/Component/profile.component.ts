@@ -1,3 +1,4 @@
+import { SummaryPipes } from './../CustomerPipes/summary.pipes';
 import { GithubService } from './../Service/github.service';
 import { Component, Input, OnInit } from "angular2/core";
 
@@ -5,7 +6,8 @@ import { Component, Input, OnInit } from "angular2/core";
     selector : 'profiles', 
         templateUrl : 'app/component/profile.component.html',
         styleUrls : ['app/component/profile.component.css'],
-        providers : [GithubService]
+        providers : [GithubService], 
+        pipes : [SummaryPipes]
 
 })
 
