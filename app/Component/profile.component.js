@@ -1,4 +1,4 @@
-System.register(['./../CustomerPipes/summary.pipes', './../Service/github.service', "angular2/core"], function(exports_1, context_1) {
+System.register(['./../CustomerPipes/summary.pipes', './../Service/github.service', "angular2/core", 'angular2/router'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(['./../CustomerPipes/summary.pipes', './../Service/github.servic
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var summary_pipes_1, github_service_1, core_1;
+    var summary_pipes_1, github_service_1, core_1, router_1;
     var ProfileComponent;
     return {
         setters:[
@@ -22,21 +22,25 @@ System.register(['./../CustomerPipes/summary.pipes', './../Service/github.servic
             },
             function (core_1_1) {
                 core_1 = core_1_1;
+            },
+            function (router_1_1) {
+                router_1 = router_1_1;
             }],
         execute: function() {
             ProfileComponent = (function () {
-                function ProfileComponent(githubService) {
+                function ProfileComponent(githubService, routerParams) {
                     var _this = this;
                     this.githubService = githubService;
+                    this.routerParams = routerParams;
                     this.user = {};
                     this.followers = [];
                     this.followings = [];
                     this.repos = [];
-                    //this.githubService.getProfile("Microasif").subscribe(d => console.log(d));
-                    this.githubService.getProfile("Microasif").subscribe(function (d) { return _this.user = d; });
-                    this.githubService.getFollowers("Microasif").subscribe(function (d) { return _this.followers = d; });
-                    this.githubService.getFollowings("Microasif").subscribe(function (d) { return _this.followings = d; });
-                    this.githubService.getRepositories("Microasif").subscribe(function (d) { return _this.repos = d; });
+                    this.username = this.routerParams.get("username");
+                    this.githubService.getProfile(this.username).subscribe(function (d) { return _this.user = d; });
+                    this.githubService.getFollowers(this.username).subscribe(function (d) { return _this.followers = d; });
+                    this.githubService.getFollowings(this.username).subscribe(function (d) { return _this.followings = d; });
+                    this.githubService.getRepositories(this.username).subscribe(function (d) { return _this.repos = d; });
                 }
                 ProfileComponent.prototype.ngOnInit = function () {
                     //this.loadUser();
@@ -49,7 +53,7 @@ System.register(['./../CustomerPipes/summary.pipes', './../Service/github.servic
                         providers: [github_service_1.GithubService],
                         pipes: [summary_pipes_1.SummaryPipes]
                     }), 
-                    __metadata('design:paramtypes', [github_service_1.GithubService])
+                    __metadata('design:paramtypes', [github_service_1.GithubService, router_1.RouteParams])
                 ], ProfileComponent);
                 return ProfileComponent;
             }());

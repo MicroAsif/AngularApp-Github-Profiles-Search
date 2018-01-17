@@ -33,13 +33,12 @@ System.register(['./Component/search.component', 'angular2/core', 'angular2/rout
                 AppComponent = __decorate([
                     router_1.RouteConfig([
                         { path: '/', name: 'Search', component: search_component_1.SearchComponent, useAsDefault: true },
-                        { path: '/profile', name: 'Profile', component: profile_component_1.ProfileComponent },
+                        { path: '/profile/:username', name: 'Profile', component: profile_component_1.ProfileComponent },
+                        { path: '/*other', name: 'Other', redirectTo: ['Search'] }
                     ]),
                     core_1.Component({
                         selector: 'my-app',
-                        template: " <profiles> </profiles>",
-                        //         <router-outlet></router-outlet>
-                        //     `, 
+                        template: "  \n                \n                <router-outlet></router-outlet>\n                 \n            ",
                         directives: [search_component_1.SearchComponent, profile_component_1.ProfileComponent, router_1.ROUTER_DIRECTIVES]
                     }), 
                     __metadata('design:paramtypes', [])

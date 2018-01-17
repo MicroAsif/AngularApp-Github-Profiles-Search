@@ -1,6 +1,8 @@
 import { SummaryPipes } from './../CustomerPipes/summary.pipes';
 import { GithubService } from './../Service/github.service';
 import { Component, Input, OnInit } from "angular2/core";
+import { RouteParams } from 'angular2/router';
+
 
 @Component({ 
     selector : 'profiles', 
@@ -17,12 +19,14 @@ export class ProfileComponent implements OnInit {
     followers = []; 
     followings = []; 
     repos = []; 
-    constructor(private githubService : GithubService ){
-        //this.githubService.getProfile("Microasif").subscribe(d => console.log(d));
-        this.githubService.getProfile("Microasif").subscribe(d => this.user = d);
-        this.githubService.getFollowers("Microasif").subscribe(d => this.followers = d);
-        this.githubService.getFollowings("Microasif").subscribe(d => this.followings = d);
-        this.githubService.getRepositories("Microasif").subscribe(d => this.repos = d);
+    username: string ;
+    constructor(private githubService : GithubService, private routerParams : RouteParams ){
+        this.username = this.routerParams.get("username");
+       
+        this.githubService.getProfile(this.username).subscribe(d => this.user = d);
+        this.githubService.getFollowers(this.username).subscribe(d => this.followers = d);
+        this.githubService.getFollowings(this.username).subscribe(d => this.followings = d);
+        this.githubService.getRepositories(this.username).subscribe(d => this.repos = d);
     } 
 
     ngOnInit() {

@@ -5,17 +5,17 @@ import { ProfileComponent } from './Component/profile.component';
 
 @RouteConfig([
         {path : '/', name : 'Search', component : SearchComponent, useAsDefault: true}, 
-        {path : '/profile', name:'Profile', component: ProfileComponent},
-        // {path : '/*other', name : 'Other', redirectTo : ['Search']},
+        {path : '/profile/:username', name:'Profile', component: ProfileComponent},
+        {path : '/*other', name : 'Other', redirectTo : ['Search']}
 ])
 
 @Component({
     selector: 'my-app',
-    template : ` <profiles> </profiles>`, 
+    template : `  
                 
-        //         <router-outlet></router-outlet>
+                <router-outlet></router-outlet>
                  
-        //     `, 
+            `, 
     directives : [SearchComponent, ProfileComponent,ROUTER_DIRECTIVES]
 })
 export class AppComponent {

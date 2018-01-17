@@ -31,7 +31,7 @@
                 
                 <div class="col-2" *ngFor="#u of users">
                     <img class="mr-3 rounded-circle" [src]="u.avatar_url"  alt="Generic placeholder image">
-                    <h5 class="mt-0"><a [routerLink]="['Profile']">{{u.login}}</a> </h5>
+                    <h5 class="mt-0"><a [routerLink]="['Profile', {username : u.login}]">{{u.login}}</a> </h5>
                     <br/>
                 </div>
             </div>  
