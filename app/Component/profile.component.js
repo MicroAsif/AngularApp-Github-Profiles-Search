@@ -1,4 +1,4 @@
-System.register(['./../CustomerPipes/summary.pipes', './../Service/github.service', "angular2/core", 'angular2/router'], function(exports_1, context_1) {
+System.register(['./loader.component', './../CustomerPipes/summary.pipes', './../Service/github.service', "angular2/core", 'angular2/router'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,10 +10,13 @@ System.register(['./../CustomerPipes/summary.pipes', './../Service/github.servic
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var summary_pipes_1, github_service_1, core_1, router_1;
+    var loader_component_1, summary_pipes_1, github_service_1, core_1, router_1;
     var ProfileComponent;
     return {
         setters:[
+            function (loader_component_1_1) {
+                loader_component_1 = loader_component_1_1;
+            },
             function (summary_pipes_1_1) {
                 summary_pipes_1 = summary_pipes_1_1;
             },
@@ -36,11 +39,13 @@ System.register(['./../CustomerPipes/summary.pipes', './../Service/github.servic
                     this.followers = [];
                     this.followings = [];
                     this.repos = [];
+                    this.isUserDataLoading = true;
                     this.username = this.routerParams.get("username");
                     this.githubService.getProfile(this.username).subscribe(function (d) { return _this.user = d; });
                     this.githubService.getFollowers(this.username).subscribe(function (d) { return _this.followers = d; });
                     this.githubService.getFollowings(this.username).subscribe(function (d) { return _this.followings = d; });
                     this.githubService.getRepositories(this.username).subscribe(function (d) { return _this.repos = d; });
+                    this.isUserDataLoading = false;
                 }
                 ProfileComponent.prototype.ngOnInit = function () {
                     //this.loadUser();
@@ -50,6 +55,7 @@ System.register(['./../CustomerPipes/summary.pipes', './../Service/github.servic
                         selector: 'profiles',
                         templateUrl: 'app/component/profile.component.html',
                         styleUrls: ['app/component/profile.component.css'],
+                        directives: [loader_component_1.LoaderComponent],
                         providers: [github_service_1.GithubService],
                         pipes: [summary_pipes_1.SummaryPipes]
                     }), 

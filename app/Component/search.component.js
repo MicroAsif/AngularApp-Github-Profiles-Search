@@ -1,4 +1,4 @@
-System.register(['./profile.component', './../Service/github.service', "angular2/core", 'angular2/router'], function(exports_1, context_1) {
+System.register(['./profile.component', './../Service/github.service', "angular2/core", 'angular2/router', './loader.component'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(['./profile.component', './../Service/github.service', "angular2
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var profile_component_1, github_service_1, core_1, router_1;
+    var profile_component_1, github_service_1, core_1, router_1, loader_component_1;
     var SearchComponent;
     return {
         setters:[
@@ -25,18 +25,27 @@ System.register(['./profile.component', './../Service/github.service', "angular2
             },
             function (router_1_1) {
                 router_1 = router_1_1;
+            },
+            function (loader_component_1_1) {
+                loader_component_1 = loader_component_1_1;
             }],
         execute: function() {
             SearchComponent = (function () {
                 function SearchComponent(githubService) {
                     this.githubService = githubService;
+                    this.isUserLoading = false;
                     this.users = [];
                 }
                 SearchComponent.prototype.onSubmit = function (username) {
                     var _this = this;
-                    console.log(username);
-                    if (username.length > 3)
+                    console.log(this.isUserLoading);
+                    if (username.length > 3) {
+                        this.isUserLoading = true;
+                        console.log(this.isUserLoading);
+                        console.log(username);
                         this.githubService.GetAllProfiles(username).subscribe(function (data) { return _this.users = data; });
+                        this.isUserLoading = false;
+                    }
                 };
                 SearchComponent = __decorate([
                     core_1.Component({
@@ -44,7 +53,7 @@ System.register(['./profile.component', './../Service/github.service', "angular2
                         templateUrl: 'app/Component/search.component.html',
                         styles: ["\n            img { \n                width : 90px;\n            }\n        "],
                         providers: [github_service_1.GithubService],
-                        directives: [profile_component_1.ProfileComponent, router_1.ROUTER_DIRECTIVES]
+                        directives: [profile_component_1.ProfileComponent, router_1.ROUTER_DIRECTIVES, loader_component_1.LoaderComponent]
                     }), 
                     __metadata('design:paramtypes', [github_service_1.GithubService])
                 ], SearchComponent);
