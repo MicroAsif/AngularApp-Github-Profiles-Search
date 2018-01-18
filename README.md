@@ -13,6 +13,8 @@ github user details :
 
 # Download and run
 ```
-npm install 
-npm start 
+git clone https://github.com/MicroAsif/NgApp-Github-Profiles-Search.git
+cd NgApp-Github-Profiles-Search
+npm install
+npm start
 ```
