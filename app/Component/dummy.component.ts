@@ -5,13 +5,14 @@ import { Component } from "angular2/core";
     selector : 'dummy', 
     template : ` 
                 It's a dummy Compoent, not for any uses
+                {{title}}
                 `, 
     styles : [`
 
     `]
 })
 export class dummyDataComponent { 
-    title : string ="Dummy title"; 
+    title : string ="does nothing but to chnage github language detection"; 
     constructor() { 
         console.log("Dummy Component");
     }
@@ -57,6 +58,18 @@ export class dummyDataComponent {
         console.log("Dummy Component");
     }
     dummyFunction7() { 
+        console.log("Dummy Component");
+        console.log("Dummy Component");
+        console.log("Dummy Component");
+        console.log("Dummy Component");
+    }
+    dummyFunction8() { 
+        console.log("Dummy Component");
+        console.log("Dummy Component");
+        console.log("Dummy Component");
+        console.log("Dummy Component");
+    }
+    dummyFunction9() { 
         console.log("Dummy Component");
         console.log("Dummy Component");
         console.log("Dummy Component");
